@@ -23,6 +23,18 @@
     },
     "plugins": [
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cb639fa5-1d6a-4235-83e3-bcab9c78f2d4"
+      }
+    },
+    "owner": "basebandit",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cb639fa5-1d6a-4235-83e3-bcab9c78f2d4"
+    }
   }
 }
