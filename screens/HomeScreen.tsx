@@ -93,7 +93,9 @@ export default function HomeScreen({ session }: { session: Session }) {
         <View>
           <Text style={s.hello}>Hi, {name}</Text>
           <Text style={s.muted}>
-            {myRow ? `Rank ${myRank} with ${myRow.total_score} points` : 'Log your first session'}
+            {myRow
+              ? `Rank ${myRank} with ${myRow.total_score} points`
+              : mine.length ? 'Outside the top 20' : 'Log your first session'}
           </Text>
         </View>
         <Pressable onPress={() => supabase.auth.signOut()} hitSlop={10}>
@@ -117,6 +119,7 @@ export default function HomeScreen({ session }: { session: Session }) {
             placeholderTextColor="#9AA6A0"
             value={drill}
             onChangeText={setDrill}
+            maxLength={60}
           />
           <TextInput
             style={[s.input, { flex: 1 }]}
@@ -125,6 +128,7 @@ export default function HomeScreen({ session }: { session: Session }) {
             keyboardType="number-pad"
             value={score}
             onChangeText={setScore}
+            maxLength={9}
           />
         </View>
         {!!error && <Text style={s.error}>{error}</Text>}
